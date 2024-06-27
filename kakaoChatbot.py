@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import *
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-model_path = "./model_jh/" 
+model_path = "model_jh" 
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(model_path)
 model.config.use_cache = False
@@ -50,7 +50,7 @@ class MessageLabel(QTextEdit):
         self.setSizePolicy(self.sizePolicy().Expanding, self.sizePolicy().Expanding)
         self.setStyleSheet(self.get_stylesheet())
 
-    def get_stylesheet(self):
+    def get_stylesheet(self): # 뭔가 뻘짓한 느낌
         if self.is_user:
             return (
                 "background-color: #FFFF00;"
